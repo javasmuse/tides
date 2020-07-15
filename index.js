@@ -1,22 +1,28 @@
-const tideD = document.getElementById('tide-display');
+fetch('https://tidesandcurrents.noaa.gov/api/datagetter?date=latest&station=8725110&product=air_temperature&datum=STND&time_zone=lst_ldt&units=english&format=json').then((response) => {
+    return response.json();
+}).then((data) => {
+    console.log(data);
 
-// Send GET to API to retrieve tides
-async function getTides() {
-    const res = await fetch('https://tidesandcurrents.noaa.gov/api/datagetter?date=today&station=8729840&product=water_level&datum=STND&time_zone=lst_ldt&units=english&format=json');
-    const data = await res.json();
+    const name = data.metadata.name;
+    const tideD = document.getElementById('location');
+    tideD.innerHTML = name;
 
-    return data;
-    // const tides = data.metadata.name;
-    // console.log(tides);
-}
+    const tObj = data.data[0].v;
 
-getTides().then(data => console.log(data.metadata.name));
+    const height = document.getElementById('tideDisplay');
+    height.innerHTML = tObj;
 
+    console.log(tObj);
 
 
-// fetch('https://tidesandcurrents.noaa.gov/api/datagetter?date=today&station=8729840&product=water_level&datum=STND&time_zone=lst_ldt&units=english&format=json').then(function (response) {
-//     console.log('Spoonbills run in packs', response);
 
-// }).catch(function (err) {
-//     console.warn('something went wrong', err);
-// });
+
+
+}).catch((err) => {
+    console.warn(error);
+});
+
+
+
+
+// then(response => response.json()).then(data => console.log(data));

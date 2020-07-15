@@ -16,18 +16,30 @@
     flex-direction: row;
     justify-content: center;
     align-content: center;
+    color: #103649;
+    text-shadow: #fff 1px 1px;
 }
 
 h1 {
     font-family: "Dancing Script",
         cursive;
     font-size: 3rem;
+    margin-top: 2em;
+    margin-right: 3em;
+
+}
+p {
+    font-family: "Dancing Script",
+        cursive;
+    font-size: 3rem;
     margin-top: 3em;
     margin-right: 4em;
-    color: #103649;
-    text-shadow: #fff 1px 1px;
+
 }
 
-#tide-display {
+#tideDisplay {
+    font-family: "Dancing Script", cursive;
+    font-size: 2rem;
+    margin-top: 2rem;
     padding: 3em;
 }
