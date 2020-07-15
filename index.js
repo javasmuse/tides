@@ -14,15 +14,6 @@ fetch('https://tidesandcurrents.noaa.gov/api/datagetter?date=latest&station=8725
 
     console.log(tObj);
 
-
-
-
-
 }).catch((err) => {
     console.warn(error);
 });
-
-
-
-
-// then(response => response.json()).then(data => console.log(data));
